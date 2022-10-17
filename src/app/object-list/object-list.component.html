@@ -1,0 +1,36 @@
+<p>object-list works!</p>
+
+
+
+<h1>With subscribe</h1>
+<table>
+    <thead>
+        <th>Registration number</th>
+        <th>Name</th>
+        <th>hobbies</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let object of objects">
+            <td>{{object.registrationNumber}}</td>
+            <td>{{object.name}}</td>
+            <td *ngFor="let hobby of object.hobbies">{{hobby}}</td>
+        </tr>  
+    </tbody>
+</table>
+
+
+<h1>With observable</h1>
+<table >
+    <thead>
+        <th>Registration number</th>
+        <th>Name</th>
+        <th>hobbies</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let object of objects$ | async">
+            <td>{{object.registrationNumber}}</td>
+            <td>{{object.name}}</td>
+            <td *ngFor="let hobby of object.hobbies">{{hobby}}</td>
+        </tr>  
+    </tbody>
+</table>
